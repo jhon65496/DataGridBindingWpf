@@ -13,7 +13,7 @@
 
     <Grid>
         <DataGrid Grid.Row="1"                                         
-                     ItemsSource="{Binding Indexes, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                     ItemsSource="{Binding Indexes, UpdateSourceTrigger=PropertyChanged}"
                     SelectedItem="{Binding SelectedIndex}"                          
                     SelectedIndex="2"
                     x:Name="MainDataGrid"                                                             
