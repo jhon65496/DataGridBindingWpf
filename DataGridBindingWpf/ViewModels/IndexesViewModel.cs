@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 // using DataGridBindingWpf.Data;
 using System.Diagnostics;
 using System.Windows.Input;
+using System.ComponentModel;
 // using DataGridBindingWpf.Commands;
 
 namespace DataGridBindingWpf.ViewModels
@@ -27,11 +28,24 @@ namespace DataGridBindingWpf.ViewModels
 
         private void Indexes_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
-            // throw new NotImplementedException();
-            Debug.WriteLine($"Indexes_CollectionChanged");
-            Debug.WriteLine($"Indexes_CollectionChanged: --- {e.Action.ToString()}");
+            if (e.OldItems != null)
+            {
+                foreach (INotifyPropertyChanged item in e.OldItems)
+                    // item.PropertyChanged -= UpdatePrice;
+            }
+            if (e.NewItems != null)
+            {
+                foreach (INotifyPropertyChanged item in e.NewItems)
+                    // item.PropertyChanged += UpdatePrice;
+            }
+            
             _dataContextApp.SaveChanges();
         }
+
+        public void UpdatePrice()
+        {
+
+        }   
 
         private ObservableCollection<Index> indexes;
         public ObservableCollection<Index> Indexes
