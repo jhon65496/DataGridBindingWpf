@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 // using DataGridBindingWpf.Data;
 using System.Diagnostics;
 using System.Windows.Input;
+using DataGridBindingWpfPrivate01.ViewModels;
 // using DataGridBindingWpf.Commands;
 
 namespace DataGridBindingWpf.ViewModels
 {
-    public class IndexesViewModel : BaseVM
+    public class IndexesViewModel : OnPropertyChangedClass
     {   
         DbContextIndexes _dataContextApp;
         public IndexesViewModel()
@@ -42,9 +43,9 @@ namespace DataGridBindingWpf.ViewModels
                 indexes = value;
 
                 Debug.WriteLine($"ObservableCollection<Index> Indexes -- set ");
-                _dataContextApp.SaveChanges();
+                // _dataContextApp.SaveChanges();
 
-                RaisePropertyChanged(nameof(Indexes));
+                OnPropertyChanged(nameof(Indexes));
             }
         }
 
