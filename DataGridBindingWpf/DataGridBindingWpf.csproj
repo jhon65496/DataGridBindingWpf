@@ -74,7 +74,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewModels\BaseVM.cs" />
+    <Compile Include="ViewModels\Base\BaseVM.cs" />
+    <Compile Include="ViewModels\Base\OnPropertyChangedClass.cs" />
     <Compile Include="ViewModels\DbContextIndexes.cs" />
     <Compile Include="ViewModels\IndexesViewModel.cs" />
     <Page Include="MainWindow.xaml">
